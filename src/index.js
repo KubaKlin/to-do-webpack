@@ -1,5 +1,7 @@
 import './style.css';
 import { getButtonsWrapper } from './getButtonsWrapper';
+import { moveTaskForward } from './moveTaskForward';
+import { moveTaskBackward } from './moveTaskBackwards';
 
 const taskInput = document.querySelector('.add-task-input');
 const taskInputButton = document.querySelector('.add-task-button');
@@ -8,34 +10,6 @@ const errorLabel = document.querySelector('.add-input-error-label');
 
 if (errorLabel) {
   errorLabel.innerText = 'Task title cannot be empty';
-}
-
-const firstColumn = document.querySelector('#first-column');
-const secondColumn = document.querySelector('#second-column');
-const thirdColumn = document.querySelector('#third-column');
-
-function moveTaskForward(taskCard, currentColumnNumber, leftArrowButton, rightArrowButton) {
-  taskCard.cloneNode(true);
-  taskCard.remove();
-  if (currentColumnNumber === 1) {
-    secondColumn?.append(taskCard);
-    leftArrowButton?.classList.remove('hidden');
-  } else if (currentColumnNumber === 2) {
-    thirdColumn?.append(taskCard);
-    rightArrowButton?.classList.add('hidden');
-  }
-}
-
-function moveTaskBackward(taskCard, currentColumnNumber, leftArrowButton, rightArrowButton) {
-  taskCard.cloneNode(true);
-  taskCard.remove();
-  if (currentColumnNumber === 2) {
-    firstColumn?.append(taskCard);
-    leftArrowButton?.classList.add('hidden');
-  } else if (currentColumnNumber === 3) {
-    secondColumn?.append(taskCard);
-    rightArrowButton?.classList.remove('hidden');
-  }
 }
 
 taskInputButton?.addEventListener('click', function() {
@@ -58,12 +32,23 @@ taskInputButton?.addEventListener('click', function() {
 
   let currentColumnNumber = 1;
   rightArrowButton.addEventListener('click', function() {
-    moveTaskForward(taskCard, currentColumnNumber, leftArrowButton, rightArrowButton);
+    moveTaskForward(
+      taskCard,
+      currentColumnNumber,
+      leftArrowButton,
+      rightArrowButton,
+    );
     currentColumnNumber += 1;
+    console.log(currentColumnNumber);
   })
 
   leftArrowButton.addEventListener('click', function() {
-    moveTaskBackward(taskCard, currentColumnNumber, leftArrowButton, rightArrowButton);
+    moveTaskBackward(
+      taskCard,
+      currentColumnNumber,
+      leftArrowButton,
+      rightArrowButton,
+    );
     currentColumnNumber -= 1;
   })
 

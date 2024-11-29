@@ -19,7 +19,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.add-task-wrapper, .input-wrapper {
+.add-task-wrapper,
+.input-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,11 +105,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 15px
+  margin-top: 15px;
 }
 
 .button-bin {
-  background-image: url("img/bin.svg");
+  background-image: url('img/bin.svg');
   width: 15px;
   height: 15px;
   background-size: contain;
@@ -117,8 +118,9 @@ body {
   opacity: 0.4;
 }
 
-.button-right-arrow, .button-left-arrow {
-  background-image: url("img/arrow-right.svg");
+.button-right-arrow,
+.button-left-arrow {
+  background-image: url('img/arrow-right.svg');
   width: 25px;
   height: 25px;
   background-size: contain;
