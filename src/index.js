@@ -12,7 +12,7 @@ if (errorLabel) {
   errorLabel.innerText = 'Task title cannot be empty';
 }
 
-taskInputButton?.addEventListener('click', function() {
+taskInputButton?.addEventListener('click', function () {
   const taskTitle = taskInput?.value;
   const taskCard = document.createElement('div');
   const buttonsWrapper = getButtonsWrapper();
@@ -26,12 +26,12 @@ taskInputButton?.addEventListener('click', function() {
   const leftArrowButton = buttonsWrapper.querySelector('.button-left-arrow');
   leftArrowButton?.classList.add('hidden');
 
-  binButton.addEventListener('click', function() {
+  binButton.addEventListener('click', function () {
     taskCard.remove();
   });
 
   let currentColumnNumber = 1;
-  rightArrowButton.addEventListener('click', function() {
+  rightArrowButton.addEventListener('click', function () {
     moveTaskForward(
       taskCard,
       currentColumnNumber,
@@ -40,9 +40,9 @@ taskInputButton?.addEventListener('click', function() {
     );
     currentColumnNumber += 1;
     console.log(currentColumnNumber);
-  })
+  });
 
-  leftArrowButton.addEventListener('click', function() {
+  leftArrowButton.addEventListener('click', function () {
     moveTaskBackward(
       taskCard,
       currentColumnNumber,
@@ -50,7 +50,7 @@ taskInputButton?.addEventListener('click', function() {
       rightArrowButton,
     );
     currentColumnNumber -= 1;
-  })
+  });
 
   if (taskTitle !== '') {
     tasksWrapper?.append(taskCard);
