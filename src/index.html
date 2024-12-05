@@ -5,6 +5,27 @@
     <title>Webpack App</title>
   </head>
   <body>
-    <img src="./images/js_logo.png" alt="JavaScript logo" />
+    <div class="add-task-wrapper">
+      <div class="input-wrapper">
+        <input
+          class="add-task-input"
+          type="text"
+          placeholder="Type task name"
+        />
+        <button type="submit" class="add-task-button">+</button>
+      </div>
+      <p class="add-input-error-label"></p>
+    </div>
+    <div class="columns-wrapper">
+      <div class="tasks-column" id="first-column">
+        <h4 class="tasks-column-header">To do</h4>
+      </div>
+      <div class="tasks-column" id="second-column">
+        <h4 class="tasks-column-header">Doing</h4>
+      </div>
+      <div class="tasks-column" id="third-column">
+        <h4 class="tasks-column-header">Done</h4>
+      </div>
+    </div>
   </body>
 </html>
